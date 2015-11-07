@@ -9,7 +9,7 @@
 (function() {
   var FiscalNoteAPI = "https://api.fiscalnote.com/legislators?q=bernie+sanders&apikey=LDKM5DA2I6UNZQ865ZGG1F4YLSHU4KYQ&callback=?";
   $.getJSON( FiscalNoteAPI,function(data){
-  	document.write(data[0].birth_place);
+  	console.log(data[0].birth_place);
   });
 }());
 </script>
