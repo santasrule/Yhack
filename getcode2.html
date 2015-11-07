@@ -1,18 +1,26 @@
 <html>
 <head>
-	<title>penis</title>
-<script src="https://code.jquery.com/jquery-latest.min.js">
-</script>	
-<body>
+	<title>
+		Political Computational Engine
+	</title	>
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+
+</head>
+Enter a word to be matched with a relevant political figure
+<form name=formname action="getgud.html" method=post>
+
+  <div>
+    <input name=holdname type="text">
+    <input type="submit">
+  </div>
+</form>
 
 <script>
-(function() {
-  var FiscalNoteAPI = "https://api.fiscalnote.com/legislators?q=bernie+sanders&apikey=LDKM5DA2I6UNZQ865ZGG1F4YLSHU4KYQ&callback=?";
-  $.getJSON( FiscalNoteAPI,function(data){
-  	console.log(data[0].birth_place);
-  });
-}());
+$( "form" ).submit(function( event ) {
+	var TestVar = formname.holdname.value;
+alert( 'You entered: ' + TestVar );
+ alert( 'Our computational engine indicates you would benefit from learning about Bernie Sanders :^)' );
+});
 </script>
-</body>
-</head>
+
 </html>
