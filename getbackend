@@ -7,7 +7,7 @@
 
 </head>
 Enter a word to be matched with a relevant political figure
-<form name=formname action="codespec.html" method=post>
+<form name=formname action="codebackend.html" method=post>
   <div>
     <input name=holdname type="text">
     <input type="submit">
@@ -17,7 +17,10 @@ Enter a word to be matched with a relevant political figure
 <script>
 $( "form" ).submit(function( event ) {
 	var TestVar = formname.holdname.value;
+		alert( 'You entered: ' + TestVar );
+		alert( 'Our computational engine indicates you would benefit from learning about Bernie Sanders :^)' );
 		window.name=TestVar;
+	
 });
 </script>
 </html>

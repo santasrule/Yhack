@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script>
+(function() {
+  var url = "https://api.fiscalnote.com/legislators?q=bernie+sanders&apikey=LDKM5DA2I6UNZQ865ZGG1F4YLSHU4KYQ&callback=?";
+  $.getJSON(url,function(data){
+  	console.log(data[0]);
+      console.log(data[0]['last_name']);
+        var dvar = new Array("full_name","computed_party","job_title","state","computed_district","computed_chamber","active","next_election");
+        var dvarn = new Array ("","Political Party: ","Job Title: ","State: ","District: ","Chamber: ","Active:", "Next Election:")
+       
+        $("#hidden").append(data[0]['photo_url']);
+        $('#blank').append("<img src="+$('#hidden').html()+" />")
+        for (i=0; i<dvar.length;i++) {
+          $("#results").append(dvarn[i]+ " "+data[0][dvar[i]]+"<br>");
+          								}
+  										
+  	
+  });
+}());
+</script>
+</head>
+
+
+<body id='bodey' style="background-image:url(92256.jpeg)">
+
+<div id="hidden" style="display:none"></div>
+<div id="blank" style="text-align:center"> </div>
+<center>
+<div id="results" class="results" style="height:600px;width:800px;overflow-y:scroll;overflowx:hidden;text-align:center;background:white"></div>
+</center>
+
+</body>
+</html>
